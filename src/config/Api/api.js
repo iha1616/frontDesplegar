@@ -1,9 +1,9 @@
 import Swal from "sweetalert2"
 // eslint-disable-next-line
-const url = process.env.REACT_APP_URL_API // http://localhost:3000/api
+const url = process.env.REACT_APP_URL_API // https://apidesplegar-production-bc1c.up.railway.app/api
 
 const get = async (accessPath) => {
-   return fetch(`http://localhost:3000/api/${accessPath}`, {
+   return fetch(`https://apidesplegar-production-bc1c.up.railway.app/api/${accessPath}`, {
       method: "GET"
    })
       .then((res) => {
@@ -18,7 +18,7 @@ const get = async (accessPath) => {
 
 const eliminar = async (accessPath) => {
    try {
-      const response = await fetch(`http://localhost:3000/api/${accessPath}`, {
+      const response = await fetch(`https://apidesplegar-production-bc1c.up.railway.app/api/${accessPath}`, {
          method: "DELETE",
       })
       const data = await response.json()
@@ -37,7 +37,7 @@ const eliminar = async (accessPath) => {
 
 const create = async (accessPath, body) => {
    try {
-      const response = await fetch(`http://localhost:3000/api/${accessPath}`, {
+      const response = await fetch(`https://apidesplegar-production-bc1c.up.railway.app/api/${accessPath}`, {
          method: "POST",
          headers: { "Content-type": "application/json" },
          body: JSON.stringify(body)
@@ -58,7 +58,7 @@ const create = async (accessPath, body) => {
 
 const update = async (accessPath, body) => {
    try {
-      const response = await fetch(`http://localhost:3000/api/${accessPath}`, {
+      const response = await fetch(`https://apidesplegar-production-bc1c.up.railway.app/api/${accessPath}`, {
          method: "POST",
          headers: { "Content-type": "application/json" },
          body: JSON.stringify(body)
@@ -79,7 +79,7 @@ const update = async (accessPath, body) => {
 
 const loginValidate = async (body) => {
    try {
-      const response = await fetch(`http://localhost:3000/api/acceso/auth`, {
+      const response = await fetch(`https://apidesplegar-production-bc1c.up.railway.app/api/acceso/auth`, {
          method: "POST",
          headers: { "Content-type": "application/json" },
          body: JSON.stringify(body)
@@ -100,7 +100,7 @@ const loginValidate = async (body) => {
 
 const uploadFiles = async (accessPath, body) => {
    try {
-      const response = await fetch(`http://localhost:3000/api/${accessPath}`, {
+      const response = await fetch(`https://apidesplegar-production-bc1c.up.railway.app/api/${accessPath}`, {
          method: "POST",
          body: body
       })
@@ -119,7 +119,7 @@ const uploadFiles = async (accessPath, body) => {
 }
 
 const downloadFiles = async (accessPath) => {
-   return fetch(`http://localhost:3000/api/${accessPath}`, {
+   return fetch(`https://apidesplegar-production-bc1c.up.railway.app/api/${accessPath}`, {
       method: "GET"
    })
       .then((res) => {
